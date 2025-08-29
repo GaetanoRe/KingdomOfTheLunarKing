@@ -3,7 +3,9 @@ class_name Player
 
 var item_anchor : Node2D
 @export var player_speed : float
+@export var roll_speed : float
 @export var player_stats : Stats
+var hurtbox : Area2D
 var direction_point : Vector2
 var direction_str : String = "down"
 
@@ -11,6 +13,7 @@ var direction_str : String = "down"
 
 func _ready() -> void:
 	item_anchor = get_node("ItemAnchor")
+	hurtbox = get_node("Hurtbox")
 
 
 
@@ -20,6 +23,10 @@ func _physics_process(delta: float) -> void:
 		velocity = direction_point * player_speed
 	else:
 		velocity = Vector2.ZERO
+	
+	if(Input.is_action_just_pressed("dodge") && velocity != Vector2.ZERO):
+		velocity = direction_point * player_speed
+		
 	adjust_player_rotation()
 	adjust_item_anchor()
 	move_and_slide()
@@ -30,15 +37,12 @@ func _physics_process(delta: float) -> void:
 
 func adjust_player_rotation() -> void:
 	if(direction_point.x < 0):
-		
 		direction_str = "left"
 	elif(direction_point.x > 0):
 		direction_str = "right"
 	elif(direction_point.y > 0):
-		
 		direction_str = "down"
 	elif(direction_point.y < 0):
-		
 		direction_str = "up"
 		
 
