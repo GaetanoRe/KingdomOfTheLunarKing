@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://eg2ca0i8jjkp"]
+
+[ext_resource type="Texture2D" uid="uid://n8xvdj47mwc6" path="res://assets/textures/ui/itchlogoLK.png" id="1_sl1te"]
+[ext_resource type="Script" uid="uid://cxm6uai137gg5" path="res://scripts/ui/main_menu.gd" id="1_uhagc"]
+[ext_resource type="Texture2D" uid="uid://cuy7isgps3l37" path="res://assets/textures/ui/itchbg.png" id="1_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://fs7vyqetw0ry" path="res://assets/textures/ui/uibuttons/uibutton1.png" id="2_m1kxf"]
+[ext_resource type="PackedScene" uid="uid://xa5l54go1d2d" path="res://scenes/main_scene.tscn" id="2_q85j6"]
+[ext_resource type="LabelSettings" uid="uid://1gxa2aemi8w6" path="res://assets/fonts/mainMenuButtonSettings.tres" id="3_x2yvf"]
+[ext_resource type="Texture2D" uid="uid://hj357ramd4q5" path="res://assets/textures/ui/uibuttons/uibutton2.png" id="4_uhagc"]
+[ext_resource type="Texture2D" uid="uid://cb8jwpum70cn7" path="res://assets/textures/ui/uibuttons/uibutton1pressed.png" id="5_wb0q5"]
+[ext_resource type="Texture2D" uid="uid://bfeoksf6h2op" path="res://assets/textures/ui/uibuttons/uibutton2pressed.png" id="8_q85j6"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uhagc")
+start_scene = ExtResource("2_q85j6")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1218.0
+offset_bottom = 647.0
+texture = ExtResource("1_x2yvf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 20.0
+offset_right = 592.0
+offset_bottom = 500.0
+grow_horizontal = 2
+texture = ExtResource("1_sl1te")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -214.0
+offset_top = -179.0
+offset_right = 214.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_m1kxf")
+texture_pressed = ExtResource("5_wb0q5")
+
+[node name="Label" type="Label" parent="VBoxContainer/Play"]
+layout_mode = 1
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 423.0
+offset_bottom = 65.0
+text = "Play"
+label_settings = ExtResource("3_x2yvf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_uhagc")
+texture_pressed = ExtResource("8_q85j6")
+
+[node name="Label" type="Label" parent="VBoxContainer/Quit"]
+layout_mode = 0
+offset_right = 422.0
+offset_bottom = 69.0
+text = "Quit"
+label_settings = ExtResource("3_x2yvf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

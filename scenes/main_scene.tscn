@@ -6,4 +6,6 @@
 
 [node name="Player" parent="." instance=ExtResource("1_w2twt")]
 position = Vector2(160, 145)
+scale = Vector2(3, 3)
 player_speed = 100.0
+roll_speed = 500.0
