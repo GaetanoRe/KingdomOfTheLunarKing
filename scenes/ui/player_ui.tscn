@@ -1,9 +1,169 @@
-[gd_scene format=3 uid="uid://ba8kcw851hkqp"]
+[gd_scene load_steps=13 format=3 uid="uid://ba8kcw851hkqp"]
+
+[ext_resource type="Texture2D" uid="uid://cfujip13wywsq" path="res://assets/textures/ui/uiinfo1.png" id="1_jg20v"]
+[ext_resource type="FontFile" uid="uid://c5ej11lxhmaay" path="res://assets/fonts/OCRAEXT.TTF" id="2_jg20v"]
+[ext_resource type="Texture2D" uid="uid://d0dgul4aqvi33" path="res://assets/textures/ui/health_outside_secondoption.png" id="3_1afs1"]
+[ext_resource type="Texture2D" uid="uid://cscgp75h0waxo" path="res://assets/textures/ui/itchcash1.png" id="3_fatqr"]
+[ext_resource type="Texture2D" uid="uid://dy0xy1ja3u8qc" path="res://assets/textures/ui/health_inside_second_option.png" id="4_g7v3g"]
+[ext_resource type="Texture2D" uid="uid://cpkkrbukm3lnm" path="res://assets/textures/ui/mana_outside.png" id="5_rtpfr"]
+[ext_resource type="Texture2D" uid="uid://dtqmuq28a7upc" path="res://assets/textures/ui/mana_inside.png" id="6_y8ff4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1afs1"]
+font = ExtResource("2_jg20v")
+font_size = 33
+font_color = Color(1.20327e-08, 2.40654e-08, 0.300708, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtpfr"]
+font = ExtResource("2_jg20v")
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cbkn"]
+font = ExtResource("2_jg20v")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_y8ff4"]
+font = ExtResource("2_jg20v")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jg20v"]
+font = ExtResource("2_jg20v")
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 7.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PlayerInfo" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -42.0
+offset_top = -10.0
+offset_right = -2.0
+offset_bottom = 30.0
+
+[node name="Player" type="TextureRect" parent="PlayerInfo"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = -2.0
+offset_right = 221.0
+offset_bottom = 298.0
+rotation = 0.523599
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_jg20v")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="PlayerInfo"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 87.0
+offset_right = 211.0
+offset_bottom = 122.0
+rotation = -0.943751
+scale = Vector2(0.5, 0.5)
+text = "Jade"
+label_settings = SubResource("LabelSettings_1afs1")
+horizontal_alignment = 1
+
+[node name="HealthBar" type="TextureProgressBar" parent="PlayerInfo"]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 43.0
+offset_right = 559.0
+offset_bottom = 200.0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_under = ExtResource("3_1afs1")
+texture_over = ExtResource("3_1afs1")
+texture_progress = ExtResource("4_g7v3g")
+
+[node name="OVERFLOWHEALTH" type="Label" parent="PlayerInfo/HealthBar"]
+visible = false
+layout_mode = 0
+offset_left = 138.0
+offset_top = 56.0
+offset_right = 432.0
+offset_bottom = 108.0
+text = "OVERFLOW LV "
+label_settings = SubResource("LabelSettings_rtpfr")
+
+[node name="Label" type="Label" parent="PlayerInfo/HealthBar"]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 58.0
+offset_right = 520.0
+offset_bottom = 80.0
+text = "100/100"
+label_settings = SubResource("LabelSettings_0cbkn")
+
+[node name="Label2" type="Label" parent="PlayerInfo/HealthBar"]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 140.0
+offset_right = 470.0
+offset_bottom = 162.0
+text = "50/50"
+label_settings = SubResource("LabelSettings_0cbkn")
+
+[node name="ManaBar" type="TextureProgressBar" parent="PlayerInfo"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 92.0
+offset_right = 515.0
+offset_bottom = 185.0
+scale = Vector2(0.5, 0.5)
+value = 100.0
+texture_under = ExtResource("5_rtpfr")
+texture_over = ExtResource("5_rtpfr")
+texture_progress = ExtResource("6_y8ff4")
+
+[node name="OVERFLOWMANA" type="Label" parent="PlayerInfo/ManaBar"]
+visible = false
+layout_mode = 0
+offset_left = 56.0
+offset_top = 36.0
+offset_right = 350.0
+offset_bottom = 88.0
+text = "OVERFLOW LV "
+label_settings = SubResource("LabelSettings_rtpfr")
+
+[node name="Money" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="OVERFLOWMONEY" type="Label" parent="Money"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 987.0
+offset_top = 575.0
+offset_right = 1097.0
+offset_bottom = 601.0
+text = "OVERFLOW LV"
+label_settings = SubResource("LabelSettings_y8ff4")
+
+[node name="Label" type="Label" parent="Money"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1000.0
+offset_top = 601.0
+offset_right = 1068.0
+offset_bottom = 624.0
+text = "100/100"
+label_settings = SubResource("LabelSettings_jg20v")
+
+[node name="TextureRect" type="TextureRect" parent="Money"]
+layout_mode = 2
+offset_left = 1066.0
+offset_top = 593.0
+offset_right = 1105.0
+offset_bottom = 633.0
+texture = ExtResource("3_fatqr")
+expand_mode = 1
+stretch_mode = 5

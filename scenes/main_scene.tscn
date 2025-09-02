@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://xa5l54go1d2d"]
+[gd_scene load_steps=4 format=3 uid="uid://xa5l54go1d2d"]
 
+[ext_resource type="PackedScene" uid="uid://clbhnkf7wmb1w" path="res://scenes/levels/level_manager.tscn" id="1_pw63i"]
 [ext_resource type="PackedScene" uid="uid://c2phu1mwltabt" path="res://scenes/player/player.tscn" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://cuo8u7h26ycmg" path="res://scenes/ui/ui_manager.tscn" id="3_7ykc4"]
 
 [node name="Main Scene" type="Node"]
 
+[node name="LevelManager" parent="." instance=ExtResource("1_pw63i")]
+
 [node name="Player" parent="." instance=ExtResource("1_w2twt")]
 position = Vector2(160, 145)
-scale = Vector2(3, 3)
-player_speed = 100.0
+player_speed = 200.0
 roll_speed = 500.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIManager" parent="CanvasLayer" instance=ExtResource("3_7ykc4")]

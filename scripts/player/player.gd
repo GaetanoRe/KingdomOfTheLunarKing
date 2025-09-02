@@ -2,9 +2,21 @@ extends CharacterBody2D
 class_name Player
 
 var item_anchor : Node2D
+
+# Stats
+@export var player_name : String
 @export var player_speed : float = 100
 @export var roll_speed : float = 300
 @export var roll_duration : float = 0.35
+@export var player_heath : float = 100.0
+@export var player_mana : float = 50.0
+@export var player_money : int = 0
+
+@export var player_inv : Inventory
+
+var player_max_health : float = 100.0
+var player_max_mana : float = 50.0
+var player_max_money : int = 100
 
 var hurtbox : Area2D
 var hurtbox_col : CollisionShape2D

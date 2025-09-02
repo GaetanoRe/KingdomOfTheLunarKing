@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://duedrv6jca14y" path="res://scripts/player/player.gd" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://dpn8dyb18iecl" path="res://assets/textures/sprites/All bunnies.png" id="2_dovo2"]
 [ext_resource type="Texture2D" uid="uid://246nukoa7iw" path="res://assets/textures/sprites/Roll_03_up_and_down.png" id="2_gmlin"]
-[ext_resource type="PackedScene" uid="uid://7i0ksvmtvlbx" path="res://scenes/player/item.tscn" id="4_lvxji"]
+[ext_resource type="Resource" uid="uid://bln2gnmh82hom" path="res://scripts/items/inventory/player_inventory.tres" id="2_lvxji"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3j4b4"]
 atlas = ExtResource("2_gmlin")
@@ -327,14 +327,17 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8afob"]
+size = Vector2(9, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(14, 14)
+size = Vector2(7, 14)
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(2.5, 2.5)
 script = ExtResource("1_8afob")
-player_speed = 10.0
+player_speed = 20.0
 roll_speed = 100.0
+player_inv = ExtResource("2_lvxji")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.05, 0.05)
@@ -343,11 +346,13 @@ animation = &"dodge_down"
 frame_progress = 0.0303961
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_8afob")
 
 [node name="Hurtbox" type="Area2D" parent="."]
 
 [node name="DamageCollision" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [node name="ItemAnchor" type="Node2D" parent="."]
@@ -356,4 +361,4 @@ visible = false
 [node name="ItemHolder" type="Node2D" parent="ItemAnchor"]
 position = Vector2(12, 0)
 
-[node name="Item" parent="ItemAnchor/ItemHolder" instance=ExtResource("4_lvxji")]
+[node name="Camera2D" type="Camera2D" parent="."]

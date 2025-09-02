@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dnam8br1aws22"]
+
+[ext_resource type="Script" uid="uid://c10kr4502aso3" path="res://scripts/items/item_data.gd" id="1_eldh4"]
+[ext_resource type="Texture2D" uid="uid://d08or0bishio0" path="res://assets/textures/items/scythe.png" id="2_icwhu"]
+
+[resource]
+script = ExtResource("1_eldh4")
+sprite = ExtResource("2_icwhu")
+is_weapon = true
+cost = 20.0
+metadata/_custom_type_script = "uid://c10kr4502aso3"

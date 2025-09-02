@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccjp2pieykoo3"]
+
+[ext_resource type="Texture2D" uid="uid://qdi0went0xd2" path="res://assets/textures/ui/itchmisc.png" id="1_kscix"]
+
+[node name="InventorySlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(28, 28)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1124.0
+offset_bottom = -620.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(13, 12)
+scale = Vector2(0.0570312, 0.0802084)
+texture = ExtResource("1_kscix")

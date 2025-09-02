@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=4 uid="uid://cg53qg8cm06cv"]
+
+[ext_resource type="TileSet" uid="uid://bcubex8f70eab" path="res://assets/tilemap_res/room_floor.tres" id="1_tglrp"]
+[ext_resource type="PackedScene" uid="uid://k0hqwyj5au67" path="res://scenes/levels/doors/door_cave.tscn" id="2_grque"]
+
+[node name="RoomSample" type="Node2D"]
+
+[node name="FloorLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAMAAAAAAAEAAAAAAAQAAAAAAAIAAAABAAQAAAABAAIAAAACAAQAAAABAAIAAAADAAQAAAABAAIAAAAFAAQAAAABAAIAAAAEAAQAAAABAAIAAAAGAAQAAAABAAIAAAAHAAQAAAABAAIAAAAIAAQAAAAEAAIAAAAIAAMAAAAEAAEAAAAIAAIAAAAEAAEAAAAIAAEAAAAEAAAAAAAHAAEAAAADAAAAAAAGAAEAAAADAAAAAAAFAAEAAAADAAAAAAAEAAEAAAADAAAAAAADAAEAAAADAAAAAAACAAEAAAADAAAAAAABAAEAAAADAAAAAAACAAIAAAACAAEAAAABAAIAAAACAAEAAAABAAMAAAACAAEAAAACAAMAAAACAAEAAAADAAMAAAACAAEAAAADAAIAAAACAAEAAAAEAAIAAAACAAEAAAAEAAMAAAACAAEAAAAFAAMAAAACAAEAAAAFAAIAAAACAAEAAAAGAAIAAAACAAEAAAAGAAMAAAACAAEAAAAHAAMAAAACAAEAAAAHAAIAAAACAAEAAAA=")
+tile_set = ExtResource("1_tglrp")
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door_2" parent="Doors" instance=ExtResource("2_grque")]
+position = Vector2(736, 766)
+rotation = 3.14159
+scale = Vector2(0.15, 0.15)
+
+[node name="Door_3" parent="Doors" instance=ExtResource("2_grque")]
+position = Vector2(31, 462)
+rotation = -1.5708
+scale = Vector2(0.15, 0.15)
