@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh6f326c3n3sc"]
+[gd_scene load_steps=10 format=3 uid="uid://dh6f326c3n3sc"]
 
 [ext_resource type="Texture2D" uid="uid://ca7rao665vhar" path="res://assets/textures/ui/itchpause1.png" id="1_6tw0m"]
+[ext_resource type="Script" uid="uid://dmfsixb544fc6" path="res://scripts/ui/pause_menu.gd" id="1_coo1x"]
+[ext_resource type="Texture2D" uid="uid://fs7vyqetw0ry" path="res://assets/textures/ui/uibuttons/uibutton1.png" id="2_2rlsb"]
+[ext_resource type="Texture2D" uid="uid://cb8jwpum70cn7" path="res://assets/textures/ui/uibuttons/uibutton1pressed.png" id="3_coo1x"]
+[ext_resource type="LabelSettings" uid="uid://ddv247h7mhd4q" path="res://assets/fonts/pause_label.tres" id="4_2jkta"]
+[ext_resource type="Texture2D" uid="uid://hj357ramd4q5" path="res://assets/textures/ui/uibuttons/uibutton2.png" id="5_ht4ye"]
+[ext_resource type="Texture2D" uid="uid://bfeoksf6h2op" path="res://assets/textures/ui/uibuttons/uibutton2pressed.png" id="6_7yca1"]
+[ext_resource type="Texture2D" uid="uid://cyyj5dx1u8de2" path="res://assets/textures/ui/uibuttons/uibutton3.png" id="7_lrbnh"]
+[ext_resource type="Texture2D" uid="uid://cgdafuu01jxs7" path="res://assets/textures/ui/uibuttons/uibutton3pressed.png" id="8_6qnem"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_coo1x")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -46,21 +55,78 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -146.0
+offset_top = -123.0
+offset_right = 282.0
+offset_bottom = 229.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.75, 0.75)
+theme_override_constants/separation = 50
 
 [node name="Resume" type="TextureButton" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("2_2rlsb")
+texture_pressed = ExtResource("3_coo1x")
 
-[node name="Options" type="TextureButton" parent="TextureRect/VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="TextureRect/VBoxContainer/Resume"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Resume"
+label_settings = ExtResource("4_2jkta")
 
 [node name="Controls" type="TextureButton" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("5_ht4ye")
+texture_pressed = ExtResource("6_7yca1")
+
+[node name="Label2" type="Label" parent="TextureRect/VBoxContainer/Controls"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.485
+anchor_top = 0.46
+anchor_right = 0.485
+anchor_bottom = 0.46
+offset_left = -120.913
+offset_top = -25.9733
+offset_right = 121.087
+offset_bottom = 26.0267
+grow_horizontal = 2
+grow_vertical = 2
+text = "Controls"
+label_settings = ExtResource("4_2jkta")
 
 [node name="Quit" type="TextureButton" parent="TextureRect/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("7_lrbnh")
+texture_pressed = ExtResource("8_6qnem")
+
+[node name="Label3" type="Label" parent="TextureRect/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48
+anchor_top = 0.5
+anchor_right = 0.48
+anchor_bottom = 0.5
+offset_left = -20.1067
+offset_top = -12.6667
+offset_right = 19.8933
+offset_bottom = 10.3333
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+label_settings = ExtResource("4_2jkta")
+
+[connection signal="pressed" from="TextureRect/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="TextureRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

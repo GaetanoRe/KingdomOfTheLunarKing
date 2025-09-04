@@ -1,6 +1,4 @@
-extends Control
-
-var is_open = false
+extends PlayerMenu
 
 func _ready() -> void:
 	close()
@@ -13,9 +11,3 @@ func _process(delta: float) -> void:
 			open()
 	
 	visible = is_open
-
-func open() -> void:
-	is_open = true
-
-func close() -> void:
-	is_open = false

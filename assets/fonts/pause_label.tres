@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ddv247h7mhd4q"]
+
+[ext_resource type="FontFile" uid="uid://c5ej11lxhmaay" path="res://assets/fonts/OCRAEXT.TTF" id="1_4mt2m"]
+
+[resource]
+font = ExtResource("1_4mt2m")
+font_size = 50
