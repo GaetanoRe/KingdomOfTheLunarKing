@@ -1,5 +1,7 @@
 extends PlayerMenu
 
+
+class_name PauseMenu
 func _ready() -> void:
 	close()
 

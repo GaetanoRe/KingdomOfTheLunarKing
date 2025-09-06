@@ -8,6 +8,8 @@ var item_anchor : Node2D
 @export var player_speed : float = 100
 @export var roll_speed : float = 300
 @export var roll_duration : float = 0.35
+
+# UI Info
 @export var player_heath : float = 100.0
 @export var player_mana : float = 50.0
 @export var player_money : int = 0

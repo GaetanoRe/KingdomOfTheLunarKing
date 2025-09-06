@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://ba8kcw851hkqp"]
+[gd_scene load_steps=14 format=3 uid="uid://ba8kcw851hkqp"]
 
 [ext_resource type="Texture2D" uid="uid://cfujip13wywsq" path="res://assets/textures/ui/uiinfo1.png" id="1_jg20v"]
+[ext_resource type="Script" uid="uid://ctxq4k2108a4l" path="res://scenes/ui/player_ui.gd" id="1_y8ff4"]
 [ext_resource type="FontFile" uid="uid://c5ej11lxhmaay" path="res://assets/fonts/OCRAEXT.TTF" id="2_jg20v"]
 [ext_resource type="Texture2D" uid="uid://d0dgul4aqvi33" path="res://assets/textures/ui/health_outside_secondoption.png" id="3_1afs1"]
 [ext_resource type="Texture2D" uid="uid://cscgp75h0waxo" path="res://assets/textures/ui/itchcash1.png" id="3_fatqr"]
@@ -38,6 +39,7 @@ offset_right = 7.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_y8ff4")
 
 [node name="PlayerInfo" type="Control" parent="."]
 anchors_preset = 0
@@ -58,7 +60,7 @@ texture = ExtResource("1_jg20v")
 expand_mode = 1
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="PlayerInfo"]
+[node name="NameLabel" type="Label" parent="PlayerInfo"]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 87.0
@@ -92,22 +94,13 @@ offset_bottom = 108.0
 text = "OVERFLOW LV "
 label_settings = SubResource("LabelSettings_rtpfr")
 
-[node name="Label" type="Label" parent="PlayerInfo/HealthBar"]
+[node name="HealthLabel" type="Label" parent="PlayerInfo/HealthBar"]
 layout_mode = 0
 offset_left = 422.0
 offset_top = 58.0
 offset_right = 520.0
 offset_bottom = 80.0
 text = "100/100"
-label_settings = SubResource("LabelSettings_0cbkn")
-
-[node name="Label2" type="Label" parent="PlayerInfo/HealthBar"]
-layout_mode = 0
-offset_left = 372.0
-offset_top = 140.0
-offset_right = 470.0
-offset_bottom = 162.0
-text = "50/50"
 label_settings = SubResource("LabelSettings_0cbkn")
 
 [node name="ManaBar" type="TextureProgressBar" parent="PlayerInfo"]
@@ -131,6 +124,15 @@ offset_right = 350.0
 offset_bottom = 88.0
 text = "OVERFLOW LV "
 label_settings = SubResource("LabelSettings_rtpfr")
+
+[node name="ManaLabel" type="Label" parent="PlayerInfo/ManaBar"]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 42.0
+offset_right = 474.0
+offset_bottom = 64.0
+text = "50/50"
+label_settings = SubResource("LabelSettings_0cbkn")
 
 [node name="Money" type="Control" parent="."]
 anchors_preset = 0

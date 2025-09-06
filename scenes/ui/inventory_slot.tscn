@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccjp2pieykoo3"]
+[gd_scene load_steps=3 format=3 uid="uid://ccjp2pieykoo3"]
 
 [ext_resource type="Texture2D" uid="uid://qdi0went0xd2" path="res://assets/textures/ui/itchmisc.png" id="1_kscix"]
+[ext_resource type="Script" uid="uid://c7ffhqa8oqueo" path="res://scenes/ui/inventory_slot.gd" id="1_ru537"]
 
 [node name="InventorySlot" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -12,8 +13,13 @@ offset_right = -1124.0
 offset_bottom = -620.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ru537")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(13, 12)
 scale = Vector2(0.0570312, 0.0802084)
 texture = ExtResource("1_kscix")
+
+[node name="ItemDisplay" type="Sprite2D" parent="."]
+position = Vector2(13, 13)
+scale = Vector2(0.075, 0.075)

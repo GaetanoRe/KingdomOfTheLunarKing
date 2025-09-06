@@ -10,9 +10,11 @@
 
 [node name="Player" parent="." instance=ExtResource("1_w2twt")]
 position = Vector2(160, 145)
+player_name = "Jade"
 player_speed = 200.0
 roll_speed = 500.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="UIManager" parent="CanvasLayer" instance=ExtResource("3_7ykc4")]
+[node name="UIManager" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("3_7ykc4")]
+player = NodePath("../../Player")
