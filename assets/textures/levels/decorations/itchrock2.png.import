@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1whxy6fgmvoo"
-path="res://.godot/imported/Room_forest_v01.png-60cae67f68583c737442f234390a1288.ctex"
+uid="uid://c6kgtxc86s08j"
+path="res://.godot/imported/itchrock2.png-7987cd903976f4c466892f8e4920fd2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/levels/Room_forest_v01.png"
-dest_files=["res://.godot/imported/Room_forest_v01.png-60cae67f68583c737442f234390a1288.ctex"]
+source_file="res://assets/textures/levels/decorations/itchrock2.png"
+dest_files=["res://.godot/imported/itchrock2.png-7987cd903976f4c466892f8e4920fd2e.ctex"]
 
 [params]
 

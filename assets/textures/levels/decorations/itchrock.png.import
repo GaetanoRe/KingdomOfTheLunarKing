@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c888dx56bva64"
-path="res://.godot/imported/itchdoor.png-56d70822feb530c3983db1fb0adcb848.ctex"
+uid="uid://d0k62uvur6wgj"
+path="res://.godot/imported/itchrock.png-99c935a96ccac72da90aea4a2e10190e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/levels/itchdoor.png"
-dest_files=["res://.godot/imported/itchdoor.png-56d70822feb530c3983db1fb0adcb848.ctex"]
+source_file="res://assets/textures/levels/decorations/itchrock.png"
+dest_files=["res://.godot/imported/itchrock.png-99c935a96ccac72da90aea4a2e10190e.ctex"]
 
 [params]
 

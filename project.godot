@@ -23,6 +23,11 @@ window/stretch/mode="viewport"
 
 project/assembly_name="Kingdom of the Lunar King"
 
+[global_group]
+
+Hazard="If the player enters these areas, then the player will take damage"
+Attack="This can be an attack from an enemy or a player."
+
 [input]
 
 walk_up={

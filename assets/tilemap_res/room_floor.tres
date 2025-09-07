@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://bcubex8f70eab"]
 
-[ext_resource type="Texture2D" uid="uid://5sjgfv4uyt1u" path="res://assets/textures/levels/Room_Cave_v01.png" id="1_mhhuw"]
-[ext_resource type="Texture2D" uid="uid://1whxy6fgmvoo" path="res://assets/textures/levels/Room_forest_v01.png" id="2_rwow0"]
-[ext_resource type="Texture2D" uid="uid://b1iqoqn85rdy2" path="res://assets/textures/levels/Room_mage_v01.png" id="3_0ewgq"]
-[ext_resource type="Texture2D" uid="uid://bv3lc4bm6kf5p" path="res://assets/textures/levels/Room_king_v01.png" id="4_mavwu"]
+[ext_resource type="Texture2D" uid="uid://5sjgfv4uyt1u" path="res://assets/textures/levels/tilemaps/Room_Cave_v01.png" id="1_mhhuw"]
+[ext_resource type="Texture2D" uid="uid://1whxy6fgmvoo" path="res://assets/textures/levels/tilemaps/Room_forest_v01.png" id="2_rwow0"]
+[ext_resource type="Texture2D" uid="uid://b1iqoqn85rdy2" path="res://assets/textures/levels/tilemaps/Room_mage_v01.png" id="3_0ewgq"]
+[ext_resource type="Texture2D" uid="uid://bv3lc4bm6kf5p" path="res://assets/textures/levels/tilemaps/Room_king_v01.png" id="4_mavwu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yod25"]
 texture = ExtResource("1_mhhuw")

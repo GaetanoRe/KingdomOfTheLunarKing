@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6kgtxc86s08j"
-path="res://.godot/imported/itchrock2.png-e325382a6799198d6d317110581f1841.ctex"
+uid="uid://dccucoilbpv6g"
+path="res://.godot/imported/itchbush1.png-40ff0b5c9c016da19929aeef6193fdd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/levels/itchrock2.png"
-dest_files=["res://.godot/imported/itchrock2.png-e325382a6799198d6d317110581f1841.ctex"]
+source_file="res://assets/textures/levels/decorations/itchbush1.png"
+dest_files=["res://.godot/imported/itchbush1.png-40ff0b5c9c016da19929aeef6193fdd6.ctex"]
 
 [params]
 

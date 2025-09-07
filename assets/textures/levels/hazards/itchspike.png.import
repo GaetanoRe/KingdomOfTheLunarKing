@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cajgtreur5y0j"
-path="res://.godot/imported/itchcdoor4.png-9714625d398fbfe888e465356c911135.ctex"
+uid="uid://cretae8bblbh"
+path="res://.godot/imported/itchspike.png-440efcd4174915827b822649f7db1d62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/levels/itchcdoor4.png"
-dest_files=["res://.godot/imported/itchcdoor4.png-9714625d398fbfe888e465356c911135.ctex"]
+source_file="res://assets/textures/levels/hazards/itchspike.png"
+dest_files=["res://.godot/imported/itchspike.png-440efcd4174915827b822649f7db1d62.ctex"]
 
 [params]
 

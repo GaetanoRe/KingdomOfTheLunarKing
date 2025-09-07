@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj8yulxyylsrt"
-path="res://.godot/imported/itchcdoor3.png-c5f0c094f28b4a0ead1c1b8ca6c88245.ctex"
+uid="uid://b1iqoqn85rdy2"
+path="res://.godot/imported/Room_mage_v01.png-33566fcf3a56eff1d584e380d5bc8fdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/levels/itchcdoor3.png"
-dest_files=["res://.godot/imported/itchcdoor3.png-c5f0c094f28b4a0ead1c1b8ca6c88245.ctex"]
+source_file="res://assets/textures/levels/tilemaps/Room_mage_v01.png"
+dest_files=["res://.godot/imported/Room_mage_v01.png-33566fcf3a56eff1d584e380d5bc8fdd.ctex"]
 
 [params]
 

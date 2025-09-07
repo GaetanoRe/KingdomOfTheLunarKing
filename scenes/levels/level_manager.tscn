@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://clbhnkf7wmb1w"]
+[gd_scene load_steps=3 format=3 uid="uid://clbhnkf7wmb1w"]
+
+[ext_resource type="PackedScene" uid="uid://dcyk6dyw7kh5c" path="res://scenes/levels/rooms/cave/room_cave.tscn" id="1_gmg8n"]
+[ext_resource type="PackedScene" uid="uid://b33flm0x8ty6q" path="res://scenes/levels/hazards/spike.tscn" id="2_ps5mn"]
 
 [node name="LevelManager" type="Node2D"]
+
+[node name="RoomSample" parent="." instance=ExtResource("1_gmg8n")]
+
+[node name="Spike" parent="." instance=ExtResource("2_ps5mn")]
+position = Vector2(564, 268)

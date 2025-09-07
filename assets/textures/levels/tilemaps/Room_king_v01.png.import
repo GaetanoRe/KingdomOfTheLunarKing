@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bv3lc4bm6kf5p"
-path="res://.godot/imported/Room_king_v01.png-4624a36e6f8feac5c34cfc5d07292419.ctex"
+path="res://.godot/imported/Room_king_v01.png-3977bf5e07314c86d592d5e3be309e85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/levels/Room_king_v01.png"
-dest_files=["res://.godot/imported/Room_king_v01.png-4624a36e6f8feac5c34cfc5d07292419.ctex"]
+source_file="res://assets/textures/levels/tilemaps/Room_king_v01.png"
+dest_files=["res://.godot/imported/Room_king_v01.png-3977bf5e07314c86d592d5e3be309e85.ctex"]
 
 [params]
 

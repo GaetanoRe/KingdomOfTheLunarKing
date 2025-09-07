@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1iqoqn85rdy2"
-path="res://.godot/imported/Room_mage_v01.png-709b4c2e4bd890624f1b942058c908f8.ctex"
+uid="uid://brf45e83ks56"
+path="res://.godot/imported/itchbush.png-e2ecf72dedfb5345a53474ba00ec229a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/levels/Room_mage_v01.png"
-dest_files=["res://.godot/imported/Room_mage_v01.png-709b4c2e4bd890624f1b942058c908f8.ctex"]
+source_file="res://assets/textures/levels/decorations/itchbush.png"
+dest_files=["res://.godot/imported/itchbush.png-e2ecf72dedfb5345a53474ba00ec229a.ctex"]
 
 [params]
 
