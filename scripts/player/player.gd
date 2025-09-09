@@ -6,6 +6,7 @@ var item_anchor : Node2D
 # Stats
 @export var player_name : String
 @export var player_speed : float = 100
+@export var hurt_knockback: float = 200
 @export var roll_speed : float = 300
 @export var roll_duration : float = 0.35
 
@@ -44,6 +45,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if(player_heath == 0):
+		var game_over = load("res://scenes/game_over.tscn")
+		get_tree().change_scene_to_packed(game_over)
 	if is_rolling:
 		# Apply locked roll velocity
 		velocity = roll_dir * roll_speed
@@ -124,4 +128,7 @@ func _on_frame_changed():
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if(area.is_in_group("Hazard")):
 		player_heath -= 25
+		var knockback_direction = direction_point * -1
+		velocity = knockback_direction * hurt_knockback
+		move_and_slide()
 		print("Hazard Entered Hurtbox")
