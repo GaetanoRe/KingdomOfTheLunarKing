@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ga0wmm85y5oo"]
+[gd_scene load_steps=12 format=3 uid="uid://ga0wmm85y5oo"]
 
 [ext_resource type="Script" uid="uid://c1gw1wuuu51ld" path="res://scripts/ui/game_over.gd" id="1_irg28"]
 [ext_resource type="FontFile" uid="uid://c5ej11lxhmaay" path="res://assets/fonts/OCRAEXT.TTF" id="1_xeevv"]
@@ -9,6 +9,7 @@
 [ext_resource type="LabelSettings" uid="uid://1gxa2aemi8w6" path="res://assets/fonts/mainMenuButtonSettings.tres" id="4_2jtsn"]
 [ext_resource type="Texture2D" uid="uid://hj357ramd4q5" path="res://assets/textures/ui/uibuttons/uibutton2.png" id="5_8bugq"]
 [ext_resource type="Texture2D" uid="uid://bfeoksf6h2op" path="res://assets/textures/ui/uibuttons/uibutton2pressed.png" id="6_wawo4"]
+[ext_resource type="AudioStream" uid="uid://b7uy3oang5ysd" path="res://assets/sound/Lose:Win/DeathTheme.wav" id="10_wawo4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yxx3c"]
 font = ExtResource("1_xeevv")
@@ -94,6 +95,9 @@ offset_right = 343.0
 offset_bottom = 50.0
 text = "Quit To Main Menu"
 label_settings = ExtResource("4_2jtsn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_wawo4")
 
 [connection signal="pressed" from="Options/PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Options/QuitToMainMenu" to="." method="_on_quit_to_main_menu_pressed"]

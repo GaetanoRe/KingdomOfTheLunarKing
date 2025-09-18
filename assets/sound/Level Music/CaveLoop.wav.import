@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cwqju22fkn6c6"
+path="res://.godot/imported/CaveLoop.wav-97f89436a63816e89018aa4f0e49e89b.sample"
+
+[deps]
+
+source_file="res://assets/sound/Level Music/CaveLoop.wav"
+dest_files=["res://.godot/imported/CaveLoop.wav-97f89436a63816e89018aa4f0e49e89b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

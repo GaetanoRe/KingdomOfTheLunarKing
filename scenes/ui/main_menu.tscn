@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://hj357ramd4q5" path="res://assets/textures/ui/uibuttons/uibutton2.png" id="4_uhagc"]
 [ext_resource type="Texture2D" uid="uid://cb8jwpum70cn7" path="res://assets/textures/ui/uibuttons/uibutton1pressed.png" id="5_wb0q5"]
 [ext_resource type="Texture2D" uid="uid://bfeoksf6h2op" path="res://assets/textures/ui/uibuttons/uibutton2pressed.png" id="8_q85j6"]
-[ext_resource type="AudioStream" uid="uid://br20oyg5e371s" path="res://assets/sound/TitleScreenLoop.wav" id="10_8g5eo"]
+[ext_resource type="AudioStream" uid="uid://br20oyg5e371s" path="res://assets/sound/Menu+/TitleScreenLoop.wav" id="10_8g5eo"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

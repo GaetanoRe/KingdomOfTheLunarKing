@@ -30,7 +30,12 @@ var current_anim : String = ""
 var knockback: Vector2 = Vector2.ZERO
 var knockback_timer: float = 0.0
 
+@onready var hurt_timer = $HurtTimer
+@onready var hurt_sound = $PlayerHitStream
+
 var sprite : AnimatedSprite2D
+
+var blinking : bool = false
 
 # Roll state
 var is_rolling: bool = false
@@ -48,11 +53,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if(player_heath == 0):
+		sprite.play("idle_down")
+		await get_tree().create_timer(2.5).timeout
 		var game_over = load("res://scenes/game_over.tscn")
 		get_tree().change_scene_to_packed(game_over)
 	
 	if(knockback_timer > 0.0):
-		print("applying knockback")
 		velocity = knockback
 		knockback_timer -= delta
 		if(knockback_timer <= 0.0):
@@ -114,11 +120,13 @@ func _on_frame_changed():
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if(area.is_in_group("Hazard")):
 		var knockback_direction = (global_position - area.global_position).normalized()
-		print(knockback_direction)
 		apply_knockback(knockback_direction, 500.0, 0.12)
-		print(velocity)
 		player_heath -= 25
+		hurt_sound.play()
 		print("Hazard Entered Hurtbox")
+		blinking = true
+		hurt_timer.start()
+		blink()
 
 func _movement(delta : float):
 	if is_rolling:
@@ -150,3 +158,14 @@ func _movement(delta : float):
 func apply_knockback( direction: Vector2, force: float, knockback_duration: float) -> void:
 	knockback = direction * force
 	knockback_timer = knockback_duration
+
+func blink():
+	if blinking:
+		sprite.visible = !sprite.visible
+		await get_tree().create_timer(0.1).timeout
+		blink()
+
+
+func _on_hurt_timer_timeout() -> void:
+	blinking = false
+	sprite.visible = true
