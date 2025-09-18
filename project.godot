@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Kingdom of the Lunar King"
 run/main_scene="uid://eg2ca0i8jjkp"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]

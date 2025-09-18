@@ -6,7 +6,6 @@ var item_anchor : Node2D
 # Stats
 @export var player_name : String
 @export var player_speed : float = 100
-@export var hurt_knockback: float = 200
 @export var roll_speed : float = 300
 @export var roll_duration : float = 0.35
 
@@ -28,6 +27,9 @@ var direction_str : String = "down"
 var animationflip : bool = false
 var current_anim : String = ""
 
+var knockback: Vector2 = Vector2.ZERO
+var knockback_timer: float = 0.0
+
 var sprite : AnimatedSprite2D
 
 # Roll state
@@ -48,31 +50,15 @@ func _physics_process(delta: float) -> void:
 	if(player_heath == 0):
 		var game_over = load("res://scenes/game_over.tscn")
 		get_tree().change_scene_to_packed(game_over)
-	if is_rolling:
-		# Apply locked roll velocity
-		velocity = roll_dir * roll_speed
-		roll_time += delta
-		if roll_time >= roll_duration:
-			is_rolling = false
+	
+	if(knockback_timer > 0.0):
+		print("applying knockback")
+		velocity = knockback
+		knockback_timer -= delta
+		if(knockback_timer <= 0.0):
+			knockback = Vector2.ZERO
 	else:
-		# Normal movement
-		direction_point = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
-		if direction_point != Vector2.ZERO:
-			velocity = direction_point * player_speed
-			last_facing_dir = direction_point.normalized()
-		else:
-			velocity = Vector2.ZERO
-
-		# Start roll
-	if Input.is_action_just_pressed("dodge"):
-		# Use current input if available, otherwise fallback to last facing
-		if direction_point != Vector2.ZERO:
-			roll_dir = direction_point.normalized()
-		else:
-			roll_dir = last_facing_dir
-		is_rolling = true
-		roll_time = 0.0
-
+		_movement(delta)
 
 	adjust_player_rotation()
 	adjust_animations()
@@ -127,8 +113,40 @@ func _on_frame_changed():
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if(area.is_in_group("Hazard")):
+		var knockback_direction = (global_position - area.global_position).normalized()
+		print(knockback_direction)
+		apply_knockback(knockback_direction, 500.0, 0.12)
+		print(velocity)
 		player_heath -= 25
-		var knockback_direction = direction_point * -1
-		velocity = knockback_direction * hurt_knockback
-		move_and_slide()
 		print("Hazard Entered Hurtbox")
+
+func _movement(delta : float):
+	if is_rolling:
+		# Apply locked roll velocity
+		velocity = roll_dir * roll_speed
+		roll_time += delta
+		if roll_time >= roll_duration:
+			is_rolling = false
+	else:
+		# Normal movement
+		direction_point = Input.get_vector("walk_left", "walk_right", "walk_up", "walk_down")
+		if direction_point != Vector2.ZERO:
+			velocity = direction_point * player_speed
+			last_facing_dir = direction_point.normalized()
+		else:
+			velocity = Vector2.ZERO
+
+		# Start roll
+	if Input.is_action_just_pressed("dodge"):
+		# Use current input if available, otherwise fallback to last facing
+		if direction_point != Vector2.ZERO:
+			roll_dir = direction_point.normalized()
+		else:
+			roll_dir = last_facing_dir
+		is_rolling = true
+		roll_time = 0.0
+
+
+func apply_knockback( direction: Vector2, force: float, knockback_duration: float) -> void:
+	knockback = direction * force
+	knockback_timer = knockback_duration
